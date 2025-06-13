@@ -1,146 +1,76 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>Goat GAMES</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoatGAMES - ألعاب مجانية</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    :root {
-      --bg-color: #ffffff;
-      --text-color: #000000;
-    }
-
-    body.dark-mode {
-      --bg-color: #1a1a1a;
-      --text-color: #ffffff;
-    }
-
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      direction: rtl;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      transition: 0.3s;
+      padding: 0;
+      font-family: 'Tahoma', sans-serif;
+      background-color: #111;
+      color: white;
+      text-align: center;
     }
 
     header {
-      text-align: center;
-      padding: 60px 20px 20px;
-      background: #111;
+      background-color: #222;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     }
 
     header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      color: #00ffd5;
-    }
-
-    header p {
-      font-size: 1.2em;
-      color: #ccc;
+      margin: 0;
+      font-size: 2rem;
     }
 
     nav {
-      text-align: center;
-      margin: 30px 0;
+      margin-top: 0.5rem;
     }
 
     nav a {
-      background-color: #222;
-      color: #fff;
-      padding: 12px 20px;
-      border-radius: 10px;
+      color: #0ff;
+      margin: 0 1rem;
       text-decoration: none;
-      margin: 0 10px;
-      transition: 0.3s;
     }
 
-    nav a:hover {
-      background-color: #00ffd5;
-      color: #000;
+    .content {
+      padding: 2rem;
     }
 
-    .games {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px;
-    }
-
-    .game-card {
-      background-color: #2c2c2c;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
-    }
-
-    .game-card:hover {
-      transform: scale(1.05);
-    }
-
-    .game-card h3 {
-      margin-top: 0;
-      color: #00ffd5;
-    }
-
-    .game-card p {
-      font-size: 0.9em;
-      color: #ccc;
+    .no-games {
+      font-size: 1.5rem;
+      color: #f33;
+      margin-top: 2rem;
     }
 
     footer {
-      text-align: center;
-      padding: 20px;
-      background: #111;
-      color: #aaa;
-    }
-
-    .theme-toggle {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      background: none;
-      border: none;
-      font-size: 24px;
-      cursor: pointer;
+      margin-top: 3rem;
+      padding: 1rem;
+      background: #222;
+      color: #888;
     }
   </style>
-</head> <link rel="icon" type="image/png" href="New Project.png">
+</head>
 <body>
 
   <header>
-    <h1>Goat GAMES</h1>
-    <p>ألعاب كاملة ومجانية جاهزة للتحميل 💻🔥</p>
+    <h1>🎮 GoatGAMES</h1>
+    <nav>
+      <a href="about.html">حول</a>
+      <a href="contact.html">تواصل</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="index.html">الرئيسية</a>
-    <a href="about.html">من نحن</a>
-    <a href="contact.html">اتصل بنا</a>
-  </nav>
-
-<section class="games">
-  <div style="text-align: center; font-size: 1.5em; color: #aaa; padding: 40px;">
-    لا يوجد ألعاب حالياً
+  <div class="content">
+    <p class="no-games">🚫 لا يوجد ألعاب حاليًا</p>
   </div>
-</section>
 
   <footer>
-    &copy; 2025 Cracked Games - جميع الحقوق محفوظة
+    &copy; 2025 GoatGAMES. جميع الحقوق محفوظة.
   </footer>
 
-  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
-
-  <script>
-    function toggleTheme() {
-      const body = document.body;
-      const button = document.querySelector('.theme-toggle');
-      body.classList.toggle('dark-mode');
-      button.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
-    }
-  </script>
 </body>
 </html>
