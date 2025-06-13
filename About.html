@@ -1,66 +1,120 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>من نحن - M3zawy Gaming</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <title>عن GoatGAMES</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    body {
-      font-family: 'Tahoma', sans-serif;
-      margin: 0;
-      padding: 20px;
-      direction: rtl;
-      transition: background-color 0.3s, color 0.3s;
+    :root {
+      --bg-color: #111;
+      --text-color: #fff;
+      --accent: #0ff;
     }
-    body.light-mode { background-color: #fff; color: #000; }
-    body.dark-mode { background-color: #111; color: #fff; }
-    header { text-align: center; margin: 40px 0; }
-    p { max-width: 800px; margin: auto; font-size: 1.2em; line-height: 1.7; }
-    #theme-toggle, #back-button {
-      position: fixed;
-      top: 15px;
-      padding: 8px 12px;
+
+    body.light {
+      --bg-color: #fff;
+      --text-color: #111;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Tahoma', sans-serif;
+      padding: 0;
+    }
+
+    header {
+      background-color: #222;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .toggle-theme {
+      background: none;
       border: none;
-      font-size: 16px;
-      border-radius: 8px;
-      z-index: 9999;
-      background: #eee;
-      color: #111;
+      font-size: 1.5rem;
+      color: var(--accent);
       cursor: pointer;
     }
-    #theme-toggle { right: 15px; }
-    #back-button { left: 15px; }
-  </style>
-</head>
-<body class="light-mode">
-  <button id="theme-toggle" title="تبديل الوضع"><i class="fas fa-moon"></i></button>
-  <button onclick="history.back()" id="back-button">🔙 رجوع</button>
 
-  <header>
-    <h1>من نحن</h1>
-  </header>
-  <p>
-    أهلاً بك في <strong>M3zawy Gaming</strong>! نحن فريق صغير متحمّس لتطوير الألعاب وتقديم محتوى ترفيهي مميز. نطمح أن نكون من روّاد صناعة الألعاب العربية.
-  </p>
-
-  <script>
-    const themeBtn = document.getElementById('theme-toggle');
-    const icon = themeBtn.querySelector('i');
-    const body = document.body;
-
-    function setTheme(theme) {
-      body.className = theme;
-      localStorage.setItem('theme', theme);
-      icon.className = theme === 'dark-mode' ? 'fas fa-sun' : 'fas fa-moon';
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
     }
 
-    themeBtn.addEventListener('click', () => {
-      const newTheme = body.className === 'dark-mode' ? 'light-mode' : 'dark-mode';
-      setTheme(newTheme);
-    });
+    h2 {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
 
-    const savedTheme = localStorage.getItem('theme') || 'light-mode';
-    setTheme(savedTheme);
+    p {
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 2rem;
+      background-color: var(--accent);
+      color: #000;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #222;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📄 عن GoatGAMES</h1>
+    <button class="toggle-theme" onclick="toggleTheme()">🌙</button>
+  </header>
+
+  <main>
+    <h2>من نحن؟</h2>
+    <p>
+      نحن فريق <strong>GoatGAMES</strong>، مجموعة من المبرمجين والمصممين الشباب الشغوفين بصناعة الألعاب.
+      هدفنا هو توفير تجربة ألعاب ممتعة ومجانية للجميع، بدون الحاجة لشراء أو اشتراك.
+    </p>
+    <p>
+      نقوم بتطوير وتجميع الألعاب المكركة من مصادر موثوقة وتقديمها بشكل آمن وسهل التحميل.
+      نحن لا نشجع على القرصنة، بل نؤمن بحرية الوصول للترفيه للجميع.
+    </p>
+    <p>
+      تابعنا في المستقبل القريب حيث سنقدم مكتبة ألعاب ضخمة، وتصميم عصري، وتحديثات مستمرة!
+    </p>
+
+    <a href="index.html" class="back-button">🔙 العودة للرئيسية</a>
+  </main>
+
+  <footer>
+    &copy; 2025 GoatGAMES. جميع الحقوق محفوظة.
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("light");
+      const icon = document.querySelector(".toggle-theme");
+      icon.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
+    }
   </script>
 </body>
 </html>
