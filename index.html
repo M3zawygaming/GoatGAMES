@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoatGAMES - ألعاب مجانية</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Tahoma', sans-serif;
+      background-color: #0e0e0e;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.light-mode {
+      background-color: #f1f1f1;
+      color: #111;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      position: relative;
+      transition: background-color 0.3s;
+    }
+
+    body.light-mode header {
+      background-color: #e2e2e2;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #66fcf1;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      color: #7dd3fc;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #a5f3fc;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    body.light-mode .theme-toggle {
+      color: #333;
+    }
+
+    .content {
+      flex: 1;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .no-games {
+      font-size: 1.7rem;
+      color: #ff4d4d;
+      margin-top: 2rem;
+    }
+
+    footer {
+      background-color: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      border-top: 1px solid #222;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: #7dd3fc;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+      color: #a5f3fc;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎮 GoatGAMES</h1>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="about.html">من نحن</a>
+      <a href="contact.html">اتصل بنا</a>
+    </nav>
+  </header>
+
+  <div class="content">
+    <p class="no-games">🚫 لا يوجد ألعاب حاليًا</p>
+  </div>
+
+  <footer>
+    &copy; 2025 GoatGAMES - جميع الحقوق محفوظة.<br>
+    <a href="https://discord.gg/رابطك">ديسكورد</a>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+    }
+  </script>
+
+</body>
+</html>
