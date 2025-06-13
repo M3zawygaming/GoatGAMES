@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>من نحن - M3zawy Gaming</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      margin: 0;
+      padding: 20px;
+      direction: rtl;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.light-mode { background-color: #fff; color: #000; }
+    body.dark-mode { background-color: #111; color: #fff; }
+    header { text-align: center; margin: 40px 0; }
+    p { max-width: 800px; margin: auto; font-size: 1.2em; line-height: 1.7; }
+    #theme-toggle, #back-button {
+      position: fixed;
+      top: 15px;
+      padding: 8px 12px;
+      border: none;
+      font-size: 16px;
+      border-radius: 8px;
+      z-index: 9999;
+      background: #eee;
+      color: #111;
+      cursor: pointer;
+    }
+    #theme-toggle { right: 15px; }
+    #back-button { left: 15px; }
+  </style>
+</head>
+<body class="light-mode">
+  <button id="theme-toggle" title="تبديل الوضع"><i class="fas fa-moon"></i></button>
+  <button onclick="history.back()" id="back-button">🔙 رجوع</button>
+
+  <header>
+    <h1>من نحن</h1>
+  </header>
+  <p>
+    أهلاً بك في <strong>M3zawy Gaming</strong>! نحن فريق صغير متحمّس لتطوير الألعاب وتقديم محتوى ترفيهي مميز. نطمح أن نكون من روّاد صناعة الألعاب العربية.
+  </p>
+
+  <script>
+    const themeBtn = document.getElementById('theme-toggle');
+    const icon = themeBtn.querySelector('i');
+    const body = document.body;
+
+    function setTheme(theme) {
+      body.className = theme;
+      localStorage.setItem('theme', theme);
+      icon.className = theme === 'dark-mode' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+
+    themeBtn.addEventListener('click', () => {
+      const newTheme = body.className === 'dark-mode' ? 'light-mode' : 'dark-mode';
+      setTheme(newTheme);
+    });
+
+    const savedTheme = localStorage.getItem('theme') || 'light-mode';
+    setTheme(savedTheme);
+  </script>
+</body>
+</html>
